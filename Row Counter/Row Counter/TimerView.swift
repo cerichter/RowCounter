@@ -47,8 +47,8 @@ struct TimerView: View {
     }
     
     var content: some View {
-        VStack (spacing: 5){
-            Text("Time Since Last Update: ")
+        VStack (spacing: 10){
+            Text("Time Since Last Update:")
             HStack { //The seconds progress bar
                 ProgressBar(progressValue: justSeconds, currentMinute: (Int(floor(timeSinceLast/60))))
                 //Text("\(Int(floor(timeSinceLast/60))) m")

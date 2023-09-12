@@ -12,15 +12,20 @@ struct RowCounter: View {
 
     
     // -------------------------------- Variables
-    @State var counter: Int = 0
+    @State var counter: Int
     @State var lastTime: Date = Date()
     
     @State var showTimer: Bool = true //TO DO: ADD OPTION TO TURN THE TIMER OFF
     var run: Bool { shouldRun() }
     
-    //@AppStorage("savedCount") var savedCount: Int = 0
-    //var isFirstOpen: Bool { counter == 0 ? true : false  }
-
+    @AppStorage("savedCount") var savedCount: Int = 0
+    
+    init() {
+        @AppStorage("savedCount") var savedCount: Int = 0
+        self._counter = State(initialValue: savedCount)
+    }
+    
+    
     // -------------------------------- Layout
     var body: some View {
         
@@ -44,7 +49,8 @@ struct RowCounter: View {
             if counter > 0 { // preventing count from being negative
                 lastTime = Date() // changes time since last row update
                 counter -= 1
-                //savedCount = counter
+                savedCount = counter
+                print(savedCount)
             }
 
         } label: { // button formatting
@@ -52,7 +58,7 @@ struct RowCounter: View {
                 .frame(width: 84, height: 64)
                 .foregroundColor(.white)
                 .background{
-                    Color.purple
+                    Color.teal
                 }
                 .cornerRadius(10)
         }
@@ -67,14 +73,14 @@ struct RowCounter: View {
         Button {
             lastTime = Date() // changes time since last row update
             counter += 1 // increases row count
-            //savedCount = counter
+            savedCount = counter
             
         } label: { // button formatting
             Image(systemName: "plus")
                 .frame(width: 84, height: 64)
                 .foregroundColor(.white)
                 .background{
-                    Color.purple
+                    Color.teal
                 }
                 .cornerRadius(10)
         }
@@ -88,7 +94,7 @@ struct RowCounter: View {
         Button { // resets the count to 0
             lastTime = Date()
             counter = 0
-            //savedCount = 0
+            savedCount = 0
         } label: {
             Text("Reset")
             .frame(width: 188, height: 44)
@@ -106,7 +112,7 @@ struct RowCounter: View {
         //Determins if the progress bar timer should run
         //If the counter is at 0 or at the saved value it should not run, otherwise it should
     
-        if counter == 0  {
+        if counter == 0 {
             return false
         }
         else {
