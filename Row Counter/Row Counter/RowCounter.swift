@@ -14,8 +14,8 @@ struct RowCounter: View {
     // -------------------------------- Variables
     @State var counter: Int
     @State var lastTime: Date = Date()
+    @State var initialValueCount: Int
     
-    @State var showTimer: Bool = true //TO DO: ADD OPTION TO TURN THE TIMER OFF
     var run: Bool { shouldRun() }
     
     @AppStorage("savedCount") var savedCount: Int = 0
@@ -23,6 +23,7 @@ struct RowCounter: View {
     init() {
         @AppStorage("savedCount") var savedCount: Int = 0
         self._counter = State(initialValue: savedCount)
+        self._initialValueCount = State(initialValue: savedCount)
     }
     
     
@@ -32,7 +33,7 @@ struct RowCounter: View {
         VStack (spacing: 20) {
             Text(counter.description)
                 .font(Font.monospacedDigit(Font.system(size: 100).weight(.light))())
-            if showTimer {TimerView(lastTime: lastTime, run: run)}
+            TimerView(lastTime: lastTime, run: run, counter: counter)
             HStack(spacing: 10) { // contains the inc and dec buttons
                 decButton()
                 incButton()
@@ -50,7 +51,6 @@ struct RowCounter: View {
                 lastTime = Date() // changes time since last row update
                 counter -= 1
                 savedCount = counter
-                print(savedCount)
             }
 
         } label: { // button formatting
@@ -92,12 +92,12 @@ struct RowCounter: View {
     func resetButton () -> some View {
         //RESET button
         Button { // resets the count to 0
-            lastTime = Date()
             counter = 0
+            lastTime = Date()
             savedCount = 0
         } label: {
             Text("Reset")
-            .frame(width: 188, height: 44)
+            .frame(width: 178, height: 44)
             .foregroundColor(.white)
             .background{
                 Color.pink
@@ -112,7 +112,7 @@ struct RowCounter: View {
         //Determins if the progress bar timer should run
         //If the counter is at 0 or at the saved value it should not run, otherwise it should
     
-        if counter == 0 {
+        if counter == 0 || counter == initialValueCount {
             return false
         }
         else {

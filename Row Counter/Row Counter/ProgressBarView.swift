@@ -13,12 +13,12 @@ import SwiftUI
 struct ProgressBar: View {
     
     let progressValue: Int //The seconds from the current minute, from timer view
-    let currentMinute: Int 
+    let currentMinute: String
     
     var body: some View {
         
         Rectangle() //background rectange
-            .frame(width: 188, height: 30)
+            .frame(width: 178, height: 30)
             .foregroundColor(.teal)
             .opacity(0.2)
         
@@ -30,8 +30,8 @@ struct ProgressBar: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
             }
-            .overlay {
-                Text("\(currentMinute)m")
+            .overlay { //text time readout
+                Text(currentMinute)
                     .font(.callout)
                     .bold()
                     .padding(.vertical, 2)

@@ -14,6 +14,7 @@ struct TimerView: View {
     // ---------------------------------------- time variables
     let lastTime: Date //PERAMETER, time of last button update
     let run: Bool
+    let counter: Int
     
     @State var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect() //primary timer
     @State var currentTime: Date = Date()
@@ -24,53 +25,50 @@ struct TimerView: View {
     
     @State var justSeconds: Int = 0
     
-    // ---------------------------------------- formatting time, see bottom
-    
-    var formattedSinceLast: String { initDateFormatter() }
-    
     // ---------------------------------------- view rendering
     var body: some View {
         content
             .onReceive(timer) { date in
                 currentTime = date
                 if run {
-                    withAnimation(.linear(duration: 1)) {
-                        justSeconds = (justSeconds + 1) % 60
+                    withAnimation(.linear(duration: 1)) { //moves the progress bar 1 unit every 1 second
+                        justSeconds =  justSeconds == 59 ? 1 : justSeconds + 1
                     }
                 }
             }
-            .onChange(of: lastTime) { newVal in
+            .onChange(of: counter) { newVal in
                 timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-                currentTime = newVal
+                currentTime = Date()
                 justSeconds = 0
+                if newVal != 0 { withAnimation(.linear(duration: 1)) { // BROKEN ------------------------------------- !!!!!!!
+                    justSeconds = 1
+                    }
+                }
             }
     }
     
     var content: some View {
-        VStack (spacing: 10){
-            Text("Time Since Last Update:")
-            HStack { //The seconds progress bar
-                ProgressBar(progressValue: justSeconds, currentMinute: (Int(floor(timeSinceLast/60))))
-                //Text("\(Int(floor(timeSinceLast/60))) m")
-            }
-            
-        }
-        .font(Font.monospacedDigit(Font.system(size: 20).weight(.light))())
+        //The seconds progress bar
+        
+        ProgressBar(progressValue: justSeconds, currentMinute: getFormattedTime())
+        
     }
     
     //---------------------------------------- formatting time
     
     
-    func initDateFormatter() -> String {
+    func getFormattedTime() -> String {
+        //formats the time for text in timer
         
         let formatter = DateComponentsFormatter()
         
-        formatter.allowedUnits = [.second, .minute, .hour]
-        formatter.unitsStyle = .short
+        formatter.allowedUnits = [.minute, .hour]
+        formatter.unitsStyle = .abbreviated
         
-        var formattedSinceLast: String { formatter.string(from: timeSinceLast) ?? "0" }
+        var formattedSeconds: String { formatter.string(from: TimeInterval(timeSinceLast)) ?? "?" }
         
-        return formattedSinceLast
+        return formattedSeconds
         
     }
+    
 }
