@@ -116,7 +116,7 @@ struct RowCounter: View {
         //Determins if the progress bar timer should run
         //If the counter is at 0 or at the saved value it should not run, otherwise it should
     
-        if counter == 0 || counter == initialCounterVal || firstTime == true {
+        if counter == 0 || (counter == initialCounterVal && firstTime == true) {
             return false
         }
         else {
