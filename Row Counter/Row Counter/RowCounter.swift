@@ -12,18 +12,19 @@ struct RowCounter: View {
 
     
     // -------------------------------- Variables
-    @State var counter: Int
-    @State var lastTime: Date = Date()
-    @State var initialValueCount: Int
+    @State var counter: Int //the row count
+    @State var lastTime: Date = Date() //the last time at the last the row was changed
+    @State var initialCounterVal: Int //retreives the starting value from save
+    @State var firstTime: Bool = true //determins if row has not been changed since opening
     
-    var run: Bool { shouldRun() }
+    var run: Bool { shouldRun() } //should the timer bar run, no if counter = 0 or no actions have been made
     
-    @AppStorage("savedCount") var savedCount: Int = 0
+    @AppStorage("savedCount") var savedCount: Int = 0 //saved row count
     
     init() {
         @AppStorage("savedCount") var savedCount: Int = 0
         self._counter = State(initialValue: savedCount)
-        self._initialValueCount = State(initialValue: savedCount)
+        self._initialCounterVal = State(initialValue: savedCount)
     }
     
     
@@ -47,6 +48,7 @@ struct RowCounter: View {
     func decButton () -> some View {
         // button to decrease the row count
         Button {
+            firstTime = false
             if counter > 0 { // preventing count from being negative
                 lastTime = Date() // changes time since last row update
                 counter -= 1
@@ -71,6 +73,7 @@ struct RowCounter: View {
     func incButton () -> some View {
         // button to increase the row count
         Button {
+            firstTime = false
             lastTime = Date() // changes time since last row update
             counter += 1 // increases row count
             savedCount = counter
@@ -92,6 +95,7 @@ struct RowCounter: View {
     func resetButton () -> some View {
         //RESET button
         Button { // resets the count to 0
+            firstTime = false
             counter = 0
             lastTime = Date()
             savedCount = 0
@@ -112,7 +116,7 @@ struct RowCounter: View {
         //Determins if the progress bar timer should run
         //If the counter is at 0 or at the saved value it should not run, otherwise it should
     
-        if counter == 0 || counter == initialValueCount {
+        if counter == 0 || counter == initialCounterVal || firstTime == true {
             return false
         }
         else {

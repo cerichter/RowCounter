@@ -32,7 +32,7 @@ struct TimerView: View {
                 currentTime = date
                 if run {
                     withAnimation(.linear(duration: 1)) { //moves the progress bar 1 unit every 1 second
-                        justSeconds =  justSeconds == 59 ? 1 : justSeconds + 1
+                        justSeconds =  justSeconds == 59 || run == false ? 1 : justSeconds + 1
                     }
                 }
             }
@@ -65,9 +65,11 @@ struct TimerView: View {
         formatter.allowedUnits = [.minute, .hour]
         formatter.unitsStyle = .abbreviated
         
-        var formattedSeconds: String { formatter.string(from: TimeInterval(timeSinceLast)) ?? "?" }
+        if run == false {
+            return "0m"
+        }
         
-        return formattedSeconds
+        return formatter.string(from: TimeInterval(timeSinceLast)) ?? "?"
         
     }
     
