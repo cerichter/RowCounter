@@ -15,6 +15,8 @@
 		7F7E03E02AABB73500592C32 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7E03DF2AABB73500592C32 /* ContentView.swift */; };
 		7F7E03E22AABB73800592C32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F7E03E12AABB73800592C32 /* Assets.xcassets */; };
 		7F7E03E62AABB73800592C32 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F7E03E52AABB73800592C32 /* Preview Assets.xcassets */; };
+		7FF58B502AB3D2B90070BC0E /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF58B4F2AB3D2B90070BC0E /* ProjectModel.swift */; };
+		7FF58B522AB3F3100070BC0E /* ToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF58B512AB3F3100070BC0E /* ToolBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		7F7E03E52AABB73800592C32 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7F7E03EB2AABB73800592C32 /* Row CounterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Row CounterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7E03F52AABB73800592C32 /* Row CounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Row CounterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FF58B4F2AB3D2B90070BC0E /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
+		7FF58B512AB3F3100070BC0E /* ToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +99,9 @@
 		7F7E03DC2AABB73500592C32 /* Row Counter */ = {
 			isa = PBXGroup;
 			children = (
-				7F5BC0AF2AABBC3900536331 /* RowCounter.swift */,
 				7F7E03DF2AABB73500592C32 /* ContentView.swift */,
+				7F5BC0AF2AABBC3900536331 /* RowCounter.swift */,
+				7FF58B4F2AB3D2B90070BC0E /* ProjectModel.swift */,
 				7F7E03DD2AABB73500592C32 /* Row_CounterApp.swift */,
 				7F71F5282AABD35700740A8E /* TimerView.swift */,
 				7F62571C2AAFB8E600B5B146 /* ProgressBarView.swift */,
@@ -104,6 +109,7 @@
 				7F7E03E12AABB73800592C32 /* Assets.xcassets */,
 				7F7E03E32AABB73800592C32 /* Row_Counter.entitlements */,
 				7F7E03E42AABB73800592C32 /* Preview Content */,
+				7FF58B512AB3F3100070BC0E /* ToolBarView.swift */,
 			);
 			path = "Row Counter";
 			sourceTree = "<group>";
@@ -249,9 +255,11 @@
 			files = (
 				7F7E03E02AABB73500592C32 /* ContentView.swift in Sources */,
 				7F5BC0B02AABBC3900536331 /* RowCounter.swift in Sources */,
+				7FF58B522AB3F3100070BC0E /* ToolBarView.swift in Sources */,
 				7F7E03DE2AABB73500592C32 /* Row_CounterApp.swift in Sources */,
 				7F62571D2AAFB8E600B5B146 /* ProgressBarView.swift in Sources */,
 				7F71F5292AABD35700740A8E /* TimerView.swift in Sources */,
+				7FF58B502AB3D2B90070BC0E /* ProjectModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
