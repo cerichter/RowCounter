@@ -8,24 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    //@AppStorage("savedProjects") var savedProjects: [ProjectModel] = .init() //saved projects
     
-    //STEPS
-    // 1. make a data model that contains all data that needs to persist about individual row counter
-    // 2. update row counter view to use 1.
-    // 2.1 store state in content view and properly propgate any changes made my RowCounterView
-    // 3. make a button that adds a new one, delete, and edits
-    
-    //@AppStorage("savedProjects") var savedProjects: [ProjectModel] = .init()  //saved projects
-    
-    @State var listOfProjects: [ProjectModel] = .init()
+    @State var listOfProjects: [ProjectModel] = [.init()]
+    @ObservedObject var projectSelecter = TabController()
     
     var body: some View {
         
         NavigationStack {
             HStack {
-                TabView {
-                    RowCounter()
-                    RowCounter()
+                TabView(selection: $projectSelecter.selectedProject) {
+                    ForEach(Array(listOfProjects.enumerated()), id: \.offset) { index, project in
+                        RowCounterView(myProject: project)
+                            .tabItem {
+                                Image(systemName: "circle")
+                            }
+                            .tag(index)
+                        
+                    }
                 }
                 .tabViewStyle(.page)
                 .indexViewStyle(.page(backgroundDisplayMode: .always))
@@ -34,6 +35,9 @@ struct ContentView: View {
                 ToolbarItem(placement: .primaryAction) {
                     Button {
                         //button action
+                        
+                        setNewProject()
+                        
                     } label: {
                         Image(systemName: "plus.circle")
                     }
@@ -42,5 +46,15 @@ struct ContentView: View {
                 }
             }
         }
+    }
+    
+    
+    func setNewProject() {
+        // creates a new ProjectModel and adds it to the list and changes the focused project to the newest one
+        
+        let newProject: ProjectModel = .init()
+        listOfProjects.append(newProject)
+        projectSelecter.changeTab(projectIndex: listOfProjects.count - 1)
+
     }
 }

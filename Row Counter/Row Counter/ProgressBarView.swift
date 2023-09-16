@@ -40,8 +40,6 @@ struct ProgressBar: View {
                     .clipShape(RoundedRectangle(cornerRadius: 15))
             }
             .cornerRadius(15)
-                
-            
     }
     
     

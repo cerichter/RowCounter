@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F5BC0B02AABBC3900536331 /* RowCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5BC0AF2AABBC3900536331 /* RowCounter.swift */; };
+		7F5BC0B02AABBC3900536331 /* RowCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5BC0AF2AABBC3900536331 /* RowCounterView.swift */; };
 		7F62571D2AAFB8E600B5B146 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F62571C2AAFB8E600B5B146 /* ProgressBarView.swift */; };
 		7F71F5292AABD35700740A8E /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F71F5282AABD35700740A8E /* TimerView.swift */; };
 		7F71F52B2AABD4FA00740A8E /* SaveDate.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7F71F52A2AABD4FA00740A8E /* SaveDate.rtf */; };
@@ -16,7 +16,7 @@
 		7F7E03E22AABB73800592C32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F7E03E12AABB73800592C32 /* Assets.xcassets */; };
 		7F7E03E62AABB73800592C32 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F7E03E52AABB73800592C32 /* Preview Assets.xcassets */; };
 		7FF58B502AB3D2B90070BC0E /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF58B4F2AB3D2B90070BC0E /* ProjectModel.swift */; };
-		7FF58B522AB3F3100070BC0E /* ToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF58B512AB3F3100070BC0E /* ToolBarView.swift */; };
+		7FF58B542AB4CFB00070BC0E /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF58B532AB4CFB00070BC0E /* TabController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7F5BC0AF2AABBC3900536331 /* RowCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowCounter.swift; sourceTree = "<group>"; };
+		7F5BC0AF2AABBC3900536331 /* RowCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowCounterView.swift; sourceTree = "<group>"; };
 		7F62571C2AAFB8E600B5B146 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		7F71F5282AABD35700740A8E /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		7F71F52A2AABD4FA00740A8E /* SaveDate.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = SaveDate.rtf; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		7F7E03EB2AABB73800592C32 /* Row CounterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Row CounterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7E03F52AABB73800592C32 /* Row CounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Row CounterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF58B4F2AB3D2B90070BC0E /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
-		7FF58B512AB3F3100070BC0E /* ToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarView.swift; sourceTree = "<group>"; };
+		7FF58B532AB4CFB00070BC0E /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				7F7E03DF2AABB73500592C32 /* ContentView.swift */,
-				7F5BC0AF2AABBC3900536331 /* RowCounter.swift */,
+				7FF58B532AB4CFB00070BC0E /* TabController.swift */,
+				7F5BC0AF2AABBC3900536331 /* RowCounterView.swift */,
 				7FF58B4F2AB3D2B90070BC0E /* ProjectModel.swift */,
 				7F7E03DD2AABB73500592C32 /* Row_CounterApp.swift */,
 				7F71F5282AABD35700740A8E /* TimerView.swift */,
@@ -109,7 +110,6 @@
 				7F7E03E12AABB73800592C32 /* Assets.xcassets */,
 				7F7E03E32AABB73800592C32 /* Row_Counter.entitlements */,
 				7F7E03E42AABB73800592C32 /* Preview Content */,
-				7FF58B512AB3F3100070BC0E /* ToolBarView.swift */,
 			);
 			path = "Row Counter";
 			sourceTree = "<group>";
@@ -253,9 +253,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FF58B542AB4CFB00070BC0E /* TabController.swift in Sources */,
 				7F7E03E02AABB73500592C32 /* ContentView.swift in Sources */,
-				7F5BC0B02AABBC3900536331 /* RowCounter.swift in Sources */,
-				7FF58B522AB3F3100070BC0E /* ToolBarView.swift in Sources */,
+				7F5BC0B02AABBC3900536331 /* RowCounterView.swift in Sources */,
 				7F7E03DE2AABB73500592C32 /* Row_CounterApp.swift in Sources */,
 				7F62571D2AAFB8E600B5B146 /* ProgressBarView.swift in Sources */,
 				7F71F5292AABD35700740A8E /* TimerView.swift in Sources */,
