@@ -8,14 +8,16 @@
 import Foundation
 import SwiftUI
 
-class ProjectModel: ObservableObject {
+class ProjectModel: ObservableObject, Identifiable {
     
     @Published var count: Int //row count
     @Published var savedCount: Int
 
     @Published var initialCountValue: Int //the inital value to be desplayed
 
-    @Published var projectTitle: String //name of the project
+    @Published var title: String //name of the project
+    
+    var id: UUID 
     
 
     // --------------------------------------------------------------------------------------- Progress Bar Variables
@@ -37,7 +39,9 @@ class ProjectModel: ObservableObject {
         self.lastTime = Date()
         self.initialCountValue = 0
         self.firstTime = true
-        self.projectTitle = ""
+        self.title = ""
+        
+        self.id = UUID()
 
     }
     
@@ -67,10 +71,10 @@ class ProjectModel: ObservableObject {
     }
     
     
-    func setProjectTitle(title: String) {
+    func setProjectTitle(projectTitle: String) {
         //sets the project title
         
-        projectTitle = title
+        title = projectTitle
         
     }
     

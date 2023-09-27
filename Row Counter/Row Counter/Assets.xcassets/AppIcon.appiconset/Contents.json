@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "Untitled design(2).png",
+      "filename" : "App Icon.jpeg",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
@@ -58,7 +58,7 @@
       "size" : "512x512"
     },
     {
-      "filename" : "Untitled design(2) 1.png",
+      "filename" : "App Icon 1.jpeg",
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"

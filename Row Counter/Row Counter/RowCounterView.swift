@@ -17,22 +17,20 @@ struct RowCounterView: View {
         
         VStack(spacing: 10) {
             TextField(
-                myProject.projectTitle,
-                text: $myProject.projectTitle,
+                myProject.title,
+                text: $myProject.title,
                 prompt: Text("Project Title")
             )
             .multilineTextAlignment(.center)
+            
             Text(myProject.count.description)
                 .font(Font.monospacedDigit(Font.system(size: 100).weight(.light))())
-            TimerView(myProject: myProject)
+            TimerView(p: myProject)
             HStack(spacing: 10) { // contains the inc and dec buttons
                 decButton()
                 incButton()
             }
             resetButton()
-        }
-        .onAppear {
-            print(myProject.projectTitle)
         }
     }
     
