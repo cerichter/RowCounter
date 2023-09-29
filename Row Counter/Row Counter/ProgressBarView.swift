@@ -45,7 +45,7 @@ struct ProgressBar: View {
     
     func computeBarWidth (frameWidth: CGFloat) -> CGFloat {
         
-        return frameWidth / 59.0 * CGFloat(integerLiteral: progressValue)
+        return frameWidth / 60.0 * CGFloat(integerLiteral: progressValue)
     
     }
 }

@@ -11,9 +11,9 @@ import SwiftUI
 class ProjectModel: ObservableObject, Identifiable {
     
     @Published var count: Int //row count
-    @Published var savedCount: Int
+    //@Published var savedCount: Int
 
-    @Published var initialCountValue: Int //the inital value to be desplayed
+    var initialCountValue: Int //the inital value to be desplayed
 
     @Published var title: String //name of the project
     
@@ -35,7 +35,7 @@ class ProjectModel: ObservableObject, Identifiable {
         //default Project
         
         self.count = 0
-        self.savedCount = 0
+        //self.savedCount = 0
         self.lastTime = Date()
         self.initialCountValue = 0
         self.firstTime = true
@@ -78,7 +78,7 @@ class ProjectModel: ObservableObject, Identifiable {
         
     }
     
-    func getJustSeconds() -> Int {
+    func computeJustSeconds() -> Int {
         
         return Int(timeSinceLast.truncatingRemainder(dividingBy: 60))
     }

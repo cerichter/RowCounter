@@ -18,7 +18,7 @@
 		7FF58B502AB3D2B90070BC0E /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF58B4F2AB3D2B90070BC0E /* ProjectModel.swift */; };
 		7FF58B562AB662C60070BC0E /* SaveProjectsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF58B552AB662C60070BC0E /* SaveProjectsController.swift */; };
 		7FF58B582AB790470070BC0E /* SaveProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF58B572AB790470070BC0E /* SaveProjectModel.swift */; };
-		7FF58B5A2AC4B9FE0070BC0E /* ProjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF58B592AC4B9FE0070BC0E /* ProjectController.swift */; };
+		7FF58B5A2AC4B9FE0070BC0E /* ContentView+Logic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF58B592AC4B9FE0070BC0E /* ContentView+Logic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 		7FF58B4F2AB3D2B90070BC0E /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
 		7FF58B552AB662C60070BC0E /* SaveProjectsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveProjectsController.swift; sourceTree = "<group>"; };
 		7FF58B572AB790470070BC0E /* SaveProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveProjectModel.swift; sourceTree = "<group>"; };
-		7FF58B592AC4B9FE0070BC0E /* ProjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectController.swift; sourceTree = "<group>"; };
+		7FF58B592AC4B9FE0070BC0E /* ContentView+Logic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView+Logic.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,13 +103,13 @@
 		7F7E03DC2AABB73500592C32 /* Row Counter */ = {
 			isa = PBXGroup;
 			children = (
-				7F7E03DF2AABB73500592C32 /* ContentView.swift */,
-				7FF58B592AC4B9FE0070BC0E /* ProjectController.swift */,
+				7F7E03DD2AABB73500592C32 /* Row_CounterApp.swift */,
+				7FF58B592AC4B9FE0070BC0E /* ContentView+Logic.swift */,
 				7FF58B552AB662C60070BC0E /* SaveProjectsController.swift */,
 				7FF58B572AB790470070BC0E /* SaveProjectModel.swift */,
-				7F5BC0AF2AABBC3900536331 /* RowCounterView.swift */,
 				7FF58B4F2AB3D2B90070BC0E /* ProjectModel.swift */,
-				7F7E03DD2AABB73500592C32 /* Row_CounterApp.swift */,
+				7F7E03DF2AABB73500592C32 /* ContentView.swift */,
+				7F5BC0AF2AABBC3900536331 /* RowCounterView.swift */,
 				7F71F5282AABD35700740A8E /* TimerView.swift */,
 				7F62571C2AAFB8E600B5B146 /* ProgressBarView.swift */,
 				7F71F52A2AABD4FA00740A8E /* SaveDate.rtf */,
@@ -263,7 +263,7 @@
 				7F7E03E02AABB73500592C32 /* ContentView.swift in Sources */,
 				7F5BC0B02AABBC3900536331 /* RowCounterView.swift in Sources */,
 				7F7E03DE2AABB73500592C32 /* Row_CounterApp.swift in Sources */,
-				7FF58B5A2AC4B9FE0070BC0E /* ProjectController.swift in Sources */,
+				7FF58B5A2AC4B9FE0070BC0E /* ContentView+Logic.swift in Sources */,
 				7F62571D2AAFB8E600B5B146 /* ProgressBarView.swift in Sources */,
 				7F71F5292AABD35700740A8E /* TimerView.swift in Sources */,
 				7FF58B502AB3D2B90070BC0E /* ProjectModel.swift in Sources */,
