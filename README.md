@@ -8,4 +8,4 @@ since the last update so that when you inevitably think, "Did I press the button
 
 
 
-Other features include the ability to add upwards of five trackers and to name individually them for easy identification.          
+Other features include the ability to add upwards of five trackers and to name them individually for easy identification.          
